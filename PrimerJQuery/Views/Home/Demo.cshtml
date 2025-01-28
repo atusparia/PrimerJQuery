@@ -1,0 +1,166 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase Básica de jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <p id="miTexto">Texto inicial</p>
+    <input type="text" id="miInput" value="Valor inicial" />
+    <a href="https://www.google.com" id="miEnlace">Ir a Google</a>
+    <br />
+
+
+    <button id="mostrar">Mostrar Mensaje</button>
+    <button id="cambiar">Cambiar Textos</button>
+    <br />
+    
+    
+    <label>Valor1:</label>
+    <input type="text" id="valor1" value="" />
+    <br />
+    <label>Valor2: </label>
+    <input type="text" id="valor2" value="" />
+    <br />
+    <button id="sumar">Sumar</button>
+    <button id="restar">Restar</button>
+    <button id="multiplicar">Multiplicar</button>
+    <button id="dividir">Dividir</button>
+    <br />
+    <label>Resultado Operacion: </label>
+    <input type="text" id="resultado" value="" />    
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <label>Nombres: </label>
+    <input type="text" id="nombres" class="clase1" value="" />
+    <br />
+    <label>Apellidos: </label>
+    <input type="text" id="apellidos" class="clase1" value="" />
+    <br />
+    <label>Edad: </label>
+    <input type="text" id="edad" class="clase1" value="" />
+    <br />
+    <label>Sexo: </label>
+    <input type="text" id="sexo" class="clase1" value="" />
+    <br />
+    <label>Direccion: </label>
+    <input type="text" id="direccion" class="clase1" value="" />
+    <br />
+    <label>Ciudad: </label>
+    <input type="text" id="ciudad" class="clase1" value="" />
+    <br />
+    <button id="limpiar">Limpiar</button>
+    <br />
+    <button id="limpiar2">Limpiar Todos</button>
+
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <button id="mensaje1" class="clase2">Mensaje1</button>
+    <br />
+    <button id="mensaje2" class="clase2">Mensaje2</button>
+    <br />
+    <button id="mensaje3" class="clase2">Mensaje3</button>
+    <br />
+    <button id="mensaje4" class="clase2">Mensaje4</button>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //EJEMPLO 01
+
+
+        // Cambiar el texto del párrafo
+        $('#miTexto').text('Nuevo texto con JQUERY');
+        // Cambiar el valor del input
+        $('#miInput').val('Nuevo valor con JQUERY');
+        // Cambiar el atributo href del enlace
+        $('#miEnlace').attr('href', 'https://www.bing.com');
+
+
+
+        $('#mostrar').click(function () {
+            alert('Hugo Torrico');
+        });
+
+        $('#cambiar').click(function () {
+            $('#miInput').val('TEXTO CAMBIADO POR BOTÓN');
+        });
+
+
+
+        $('#sumar').click(function () {
+            var valor1 = eval($('#valor1').val());
+            var valor2 = eval($('#valor2').val());
+            var suma = valor1 + valor2;
+            $('#resultado').val(suma);
+        });
+
+        $('#restar').click(function () {
+            var valor1 = eval($('#valor1').val());
+            var valor2 = eval($('#valor2').val());
+            var resta = valor1 - valor2;
+            $('#resultado').val(resta);
+        });
+
+        $('#multiplicar').click(function () {
+            var valor1 = eval($('#valor1').val());
+            var valor2 = eval($('#valor2').val());
+            var multiplica = valor1 * valor2;
+            $('#resultado').val(multiplica);
+        });
+
+        $('#dividir').click(function () {
+            var valor1 = eval($('#valor1').val());
+            var valor2 = eval($('#valor2').val());
+            var divide = valor1 / valor2;
+            $('#resultado').val(divide);
+        });
+
+
+
+        //Selector por id #
+        $('#limpiar').click(function () {
+            $('#nombres').val('');
+            $('#apellidos').val('');
+            $('#edad').val('');
+            $('#sexo').val('');
+            $('#direccion').val('');
+        });
+
+        //Selector por clase .
+        $('#limpiar2').click(function () {
+            $('.clase1').val('');
+        });
+
+
+        $('.clase2').click(function () {
+            alert('Mismo Mensaje');
+        });
+    });
+</script>
