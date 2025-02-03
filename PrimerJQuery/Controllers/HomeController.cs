@@ -33,5 +33,30 @@ namespace PrimerJQuery.Controllers
         {
             return View();
         }
+
+        public IActionResult Validaciones()
+        {
+            return View();
+        }
+
+        public IActionResult Validaciones2()
+        {
+            return View();
+        }
+
+        public IActionResult DemoAjax()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult SubmitForm(string name, string email)
+        {
+            // Aquí puedes agregar lógica para manejar los datos del formulario, como guardarlos en una base de datos
+            // Para este ejemplo, simplemente devolvemos un mensaje de éxito
+
+            //return Json(new { message = "Formulario enviado con éxito. Gracias, " + name + "!" });            
+            return Json(new { message = "Formulario enviado con éxito. Gracias!" });
+        }
     }
 }
